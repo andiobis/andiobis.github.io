@@ -1,0 +1,25 @@
+From cfc0a762d22ebeeff6d38f6c6c292de9eed40b80 Mon Sep 17 00:00:00 2001
+From: andiobis <christopher.reyes.arias@gmail.com>
+Date: Wed, 23 Jan 2019 19:38:13 -0500
+Subject: [PATCH] update in header<header
+
+---
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/index.html b/index.html
+index ad095d8..157d2f0 100644
+--- a/index.html
++++ b/index.html
+@@ -6,7 +6,7 @@
+         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+-        <title>Quick</title>
++        <title>andiobis</title>
+ 
+         <!-- Bootstrap -->
+         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+-- 
+2.18.0.windows.1
+
