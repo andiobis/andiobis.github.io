@@ -717,6 +717,7 @@ h2.slide-btm-text{
 
 .contact-form form .form-control{
     min-height: 45px;
+   
 }
 /*forms*/
 select,
@@ -1226,5 +1227,11 @@ h3.heading-progress {
     text-transform: uppercase;
     font-size:13px;
     font-weight: 700;
+}
+
+.contactPosition{
+    text-align: center;
+    margin-top: 20px;
+    
 }
 
