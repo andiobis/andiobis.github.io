@@ -80,103 +80,132 @@
                             <div class="row">
                                 <div class="col-sm-2 margin-btm-30 hidden-xs">
                                     <div class="post-date   text-right">
-                                        <h2>27</h2>
-                                        <span>Aug 2014</span>
+                                        <h2>28</h2>
+                                        <span>Feb 2019</span>
                                     </div>
                                     <div class="post-left-info">
-                                        <p><i class="fa fa-user"></i> <a href="#">Author</a></p>
-                                        <p><i class="fa fa-tag"></i> <a href="#">Sports</a></p>
-                                        <p><i class="fa fa-comment"></i> <a href="#">3 Comments</a></p>
+                                        <p><i class="fa fa-user"></i> <a href="#">Andiobis</a></p>
+                                        <p><i class="fa fa-tag"></i> <a href="#">Android/Kotlin</a></p>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="blog-post-info">                                  
-                                        <img src="img/blog-1.jpg" class="img-responsive" alt="">
-                                        <h3>Reading news in free time</h3>
+                                        <img src="img/blogcover1.png" class="img-responsive" alt="">
+                                        <h3>How to make a heterogenous RecyclerView</h3>
                                         <ul class="list-inline xs-post-info visible-xs">
-                                            <li><i class="fa fa-user"></i> <a href="#">Author</a></li>
-                                            <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
-                                            <li><i class="fa fa-comment"></i> <a href="#">3 Comments</a></li>
+                                            <li><i class="fa fa-user"></i> <a href="#">Andiobis</a></li>
+                                            <li><i class="fa fa-tag"></i> <a href="#">Android/Kotlin</a></li>
                                         </ul>
                                         <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                           When i started making my first android app, i wanted  to make an heterogenous list, i remember having a lot of app crashes and it was a real pain because i wanted to get the best way of doing it and that's why i will show you an easy way to get it.
                                         </p>
                                         <blockquote>
-                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                        I will be providing the building blocks for you to be able to create differents layouts using heterogenous ReyclerView
                                         </blockquote>
+                                        
+                                        <h2>
+                                            Prepare the layout
+                                        </h2>
                                         <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                            On my opinion one of the first things you need to start building your app is visualize how the app will look like after you have that figure out lets prepare out layout.
                                         </p>
+                                        <p>
+                                            To prepare our app we will make 3 different layouts
+                                            : main layout, vertical item and horizontal item
+                                        </p>
+                                        
+                                        <p>
+                                            Lets start with the main layout
+                                        </p>
+                                        
+                                        <p>
+                                         <script src="https://gist.github.com/andiobis/6205c431cfac27d6f3e78102f4461b2d.js"></script>
+                                        </p>
+                                        
+                                        <p>
+                                            On the main layout we will be placing a RecyclerView and we will add an id  on my case we have verticalRecyclerView. Always remember to add an id to your elements so you will be able to use them
+                                        </p>
+                                        
+                                        <p>
+                                            now we will prepare our vertical items.
+                                        </p>
+                                        
+                                        <p></p>
+                                        <script src="https://gist.github.com/andiobis/2c590d137ac5a8f2e774a71a4b22aa90.js"></script>
+                                        
+                                        <p>On my vertical item i have a linear layout  that holds a TextView that will have the section number and the 2nd RecyclerView that will display the horizontal list</p>
+                                        
+                                        <p>at last we will create the item that will be display on the horizontal list</p>
+                                        
+                                        <p><script src="https://gist.github.com/andiobis/6bfb3ab255266038281d5882b2813a19.js"></script></p>
+                                        
+                                        <p>
+                                            On this layout we will incorporate what elements we want to be shown on within each element of out horizontal RecyclerView
+                                        </p>
+                                        
+                                        <h2>
+                                            Setup Adapters
+                                        </h2>
+                                        <p>
+                                            When we want to work with a RecyclerView there are 2 concepts that we need to address: Adapter and ViewHolder.
+                                        </p>
+                                        
+                                        <p>
+                                            The adapter is the piece that will connect our data to our RecyclerView and determine the ViewHolder which will need to be used to display that data and the ViewHolder will be the pattern that our RecyclerView will use to display said data
+                                        </p>
+                                        
+                                        <p>Let's start by creating our horizontal adapter and  viewHolder</p>
+                                        
+                                        <p><script src="https://gist.github.com/andiobis/06a3005aebb103fa8c6a14bdb5119759.js"></script></p>
+                                        
+                                        <p>
+                                            Now we have set the child adapter with its viewHolder. The first thing that we have is the oncreateViewHolder, in there we will be inflating our horizontal item layout and returning it so our View holder will know where is getting the meta data from.
+                                        </p>
+                                        
+                                        <p>
+                                            then we have the function getItemCount this will define how many item will the recyclerview be displaying. on this function you can asing a list size or any int to define the amount of items.
+                                        </p>
+                                        
+                                        <p>
+                                          Then we have the onBindViewHolder, this function will asing the information to each item you have selected within the viewHolder
+                                        </p>
+                                        
+                                        <p>Last but not least we have to call each element within out layout to be able to use it on the apdapter and for that we use the ViewHolder</p>
+                                        
+                                        <p>Now that you know is the function of each element within our first adapter we will use the same knowledge to create our parent adapter that will call the horizontal Adapter</p>
+                                        
+                                        <p><script src="https://gist.github.com/andiobis/576f86fdfd1b41eff6256e2eeae10a06.js"></script></p>
+                                        
+                                        <p>
+                                            Now as u see the elements are the same the only difference is that now on our ViewHolder we need to add wich recyclerView will be our child after we define that, we will go to our onBindViewHolder and we will start by creating our layout manager in order for us to specify that all the objets will be display horizontaly we need to specify the orientacion within out LinearLayoutManager call
+                                        </p>
+                                        
+                                        <p>
+                                            after we have our layoutManager we will apply it, thereforewe will call the apply funtion on our recyclerView and we will be setting up the layout manager and the adapter
+                                        </p>
+                                        
+                                        <p>Now that we have setup both adapters the onlything that we have left will be to call out first adapter from our activity class.</p>
+                                        
+                                        <p><script src="https://gist.github.com/andiobis/9fc8198ff3cf794b8053ffb2118d0f94.js"></script></p>
+                                        
+                                        <p>
+                                            now we will be setting up out layoutManager and the adapter aswell after that you will be able to run the app without problems and will have a result similar to the following:
+                                        </p>
+                                        
+                                        <img src="img/Test1.png" class="col-xs-12" alt="">
+                                        
+                                        <p>Do you want to check the project? <a href="https://github.com/andiobis/HeterogenousRecyclerView">Click Here</a></p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div><!--blog post wrap--> 
-                        <div class="post-cmnt-wrap">
-                            <h4>3 Comments</h4>
-                            <div class="comment-list">
-                                <h4><img src="img/team-1.jpg" class="img-responsive" alt="">
-                                    by User on 27 Aug <a href="#">Reply</a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
-                                </p>
-                            </div><!--comment-list-->
-                            <div class="comment-list">
-                                <h4><img src="img/team-5.jpg" class="img-responsive" alt="">
-                                    by User on 27 Aug <a href="#">Reply</a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
-                                </p>
-                            </div><!--comment-list-->
-                            <div class="comment-list">
-                                <h4><img src="img/team-3.jpg" class="img-responsive" alt="">
-                                    by User on 27 Aug <a href="#">Reply</a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
-                                </p>
-                            </div><!--comment-list-->
-                        </div><!--post comment wrap end-->
-
-                        <div class="comment-form margin-btm-30">
-                            <h4>Leave a Comment</h4>
-                            <form role="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control comment-textarea" rows="5" placeholder="Enter your comment here"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-theme">Submit comment</button>
-                            </form>
-                        </div>
+                   
+                    
                     </div><!--blog-post col-->
                     <div class="col-sm-3">
-                        <div class="post-sidebar-box">
-                            <form role="form">
-                                <input type="text" class="form-control" placeholder="type and hit enter for search">
-
-                            </form>
-                        </div><!--sidebar box-->
-                        <div class="post-sidebar-box">
-                            <h4>Text</h4>
-                            <p>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </p>
-                        </div>
-                        <div class="sidebar-box margin40">
-                            <h4>Categories</h4>
-                            <ul class="list-unstyled cat-list">
-                                <li> <a href="#">Marketing</a> <i class="fa fa-angle-right"></i></li>
-                                <li> <a href="#">Sports</a> <i class="fa fa-angle-right"></i></li>
-                                <li> <a href="#">Fashion</a> <i class="fa fa-angle-right"></i></li>
-                                <li> <a href="#">Media</a> <i class="fa fa-angle-right"></i></li>
-                            </ul>
-                        </div>
+                
+                    
                     </div><!--blog sidebar col-->
                 </div>
             </div>
